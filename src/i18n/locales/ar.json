@@ -1,0 +1,102 @@
+{
+  "header": {
+    "search": "ابحث عن أي شيء...",
+    "selectCity": "اختر المدينة",
+    "allCities": "كل المدن",
+    "postAd": "أضف إعلان",
+    "login": "تسجيل الدخول"
+  },
+  "categories": {
+    "title": "التصنيفات",
+    "real-estate": "عقارات",
+    "vehicles": "مركبات",
+    "electronics": "إلكترونيات",
+    "home-kitchen": "منزل ومطبخ",
+    "jobs": "وظائف",
+    "services": "خدمات",
+    "personal": "أغراض شخصية",
+    "leisure": "ترفيه ورياضة",
+    "misc": "متفرقات",
+    "apartments": "شقق",
+    "houses": "منازل",
+    "land": "أراضي",
+    "cars": "سيارات",
+    "motorcycles": "دراجات نارية",
+    "phones": "هواتف",
+    "computers": "حواسيب",
+    "furniture": "أثاث",
+    "appliances": "أجهزة منزلية"
+  },
+  "filters": {
+    "title": "الفلاتر",
+    "showFilters": "إظهار الفلاتر",
+    "hideFilters": "إخفاء الفلاتر",
+    "reset": "إعادة تعيين",
+    "sortBy": "ترتيب حسب",
+    "newest": "الأحدث",
+    "priceLow": "السعر: من الأقل للأعلى",
+    "priceHigh": "السعر: من الأعلى للأقل",
+    "priceRange": "نطاق السعر",
+    "condition": "الحالة",
+    "all": "الكل",
+    "new": "جديد",
+    "used": "مستعمل",
+    "verified": "موثق",
+    "urgent": "عاجل",
+    "negotiable": "قابل للتفاوض"
+  },
+  "home": {
+    "adsFound": "إعلان",
+    "noResults": "لا توجد نتائج"
+  },
+  "adCard": {
+    "urgent": "عاجل",
+    "featured": "مميز"
+  },
+  "adDetail": {
+    "contact": "اتصل",
+    "chat": "محادثة",
+    "showPhone": "إظهار الرقم",
+    "description": "الوصف",
+    "location": "الموقع",
+    "postedOn": "تاريخ النشر",
+    "category": "التصنيف",
+    "condition": "الحالة",
+    "similarAds": "إعلانات مشابهة",
+    "seller": "البائع"
+  },
+  "auth": {
+    "login": "تسجيل الدخول",
+    "signup": "إنشاء حساب",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "noAccount": "ليس لديك حساب؟",
+    "haveAccount": "لديك حساب؟"
+  },
+  "profile": {
+    "myAds": "إعلاناتي",
+    "favorites": "المفضلة",
+    "messages": "الرسائل",
+    "settings": "الإعدادات"
+  },
+  "postAd": {
+    "title": "أضف إعلان جديد",
+    "adTitle": "عنوان الإعلان",
+    "description": "الوصف",
+    "price": "السعر",
+    "category": "التصنيف",
+    "location": "الموقع",
+    "photos": "الصور",
+    "publish": "نشر الإعلان"
+  },
+  "common": {
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "share": "مشاركة",
+    "report": "إبلاغ",
+    "back": "رجوع"
+  }
+}

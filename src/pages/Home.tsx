@@ -100,29 +100,27 @@ const Home = () => {
             setSelectedSubcategory={setSelectedSubcategory}
           />
 
-          <div className="flex-1">
-            <div className="flex gap-6">
-              <FilterSidebar
-                priceRange={priceRange}
-                setPriceRange={setPriceRange}
-                condition={condition}
-                setCondition={setCondition}
-                sortBy={sortBy}
-                setSortBy={setSortBy}
-                onReset={handleResetFilters}
-              />
+          <div className="flex-1 space-y-6">
+            <FilterSidebar
+              priceRange={priceRange}
+              setPriceRange={setPriceRange}
+              condition={condition}
+              setCondition={setCondition}
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+              onReset={handleResetFilters}
+            />
 
-              <div className="flex-1">
-                <div className="mb-4">
-                  <h2 className="text-2xl font-bold">
-                    {filteredAds.length} Ads Found
-                  </h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {filteredAds.map((ad) => (
-                    <AdCard key={ad.id} ad={ad} />
-                  ))}
-                </div>
+            <div>
+              <div className="mb-4">
+                <h2 className="text-2xl font-bold">
+                  {filteredAds.length} {filteredAds.length === 1 ? 'Ad' : 'Ads'}
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {filteredAds.map((ad) => (
+                  <AdCard key={ad.id} ad={ad} />
+                ))}
               </div>
             </div>
           </div>

@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/collapsible";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 interface CategoryMenuProps {
   selectedCategory: string;
@@ -23,6 +24,7 @@ const CategoryMenu = ({
   setSelectedSubcategory,
 }: CategoryMenuProps) => {
   const [openCategories, setOpenCategories] = useState<string[]>([]);
+  const { t } = useTranslation();
 
   const toggleCategory = (categoryId: string) => {
     if (openCategories.includes(categoryId)) {
@@ -44,7 +46,7 @@ const CategoryMenu = ({
 
   return (
     <div className="w-64 bg-card rounded-lg border p-4 shadow-sm">
-      <h3 className="font-semibold text-lg mb-4">Categories</h3>
+      <h3 className="font-semibold text-lg mb-4">{t('categories.title')}</h3>
       <div className="space-y-1">
         <Button
           variant={selectedCategory === '' ? 'secondary' : 'ghost'}
@@ -54,7 +56,7 @@ const CategoryMenu = ({
             setSelectedSubcategory('');
           }}
         >
-          All Categories
+          {t('filters.all')}
         </Button>
         {categories.map((category) => {
           const IconComponent = (LucideIcons as any)[category.icon] || LucideIcons.Circle;
@@ -75,8 +77,8 @@ const CategoryMenu = ({
                     onClick={() => handleCategoryClick(category.id)}
                   >
                     <span className="flex items-center">
-                      <IconComponent className="h-4 w-4 mr-2" />
-                      {category.name}
+                      <IconComponent className="h-4 w-4 mx-2" />
+                      {t(`categories.${category.id}`)}
                     </span>
                     {category.subcategories && (
                       <ChevronDown
@@ -88,7 +90,7 @@ const CategoryMenu = ({
                   </Button>
                 </CollapsibleTrigger>
                 {category.subcategories && (
-                  <CollapsibleContent className="space-y-1 pl-4">
+                  <CollapsibleContent className="space-y-1 px-4">
                     {category.subcategories.map((subcategory) => (
                       <Button
                         key={subcategory}
@@ -96,7 +98,7 @@ const CategoryMenu = ({
                         className="w-full justify-start text-sm"
                         onClick={() => handleSubcategoryClick(subcategory)}
                       >
-                        {subcategory}
+                        {t(`categories.${subcategory}`)}
                       </Button>
                     ))}
                   </CollapsibleContent>

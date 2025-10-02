@@ -1,0 +1,102 @@
+{
+  "header": {
+    "search": "Search for anything...",
+    "selectCity": "Select city",
+    "allCities": "All Cities",
+    "postAd": "Post Ad",
+    "login": "Login"
+  },
+  "categories": {
+    "title": "Categories",
+    "real-estate": "Real Estate",
+    "vehicles": "Vehicles",
+    "electronics": "Electronics",
+    "home-kitchen": "Home & Kitchen",
+    "jobs": "Jobs",
+    "services": "Services",
+    "personal": "Personal Items",
+    "leisure": "Leisure & Sports",
+    "misc": "Miscellaneous",
+    "apartments": "Apartments",
+    "houses": "Houses",
+    "land": "Land",
+    "cars": "Cars",
+    "motorcycles": "Motorcycles",
+    "phones": "Phones",
+    "computers": "Computers",
+    "furniture": "Furniture",
+    "appliances": "Appliances"
+  },
+  "filters": {
+    "title": "Filters",
+    "showFilters": "Show Filters",
+    "hideFilters": "Hide Filters",
+    "reset": "Reset",
+    "sortBy": "Sort By",
+    "newest": "Newest First",
+    "priceLow": "Price: Low to High",
+    "priceHigh": "Price: High to Low",
+    "priceRange": "Price Range",
+    "condition": "Condition",
+    "all": "All",
+    "new": "New",
+    "used": "Used",
+    "verified": "Verified",
+    "urgent": "Urgent",
+    "negotiable": "Negotiable"
+  },
+  "home": {
+    "adsFound": "Ads Found",
+    "noResults": "No results found"
+  },
+  "adCard": {
+    "urgent": "Urgent",
+    "featured": "Featured"
+  },
+  "adDetail": {
+    "contact": "Contact",
+    "chat": "Chat",
+    "showPhone": "Show Phone",
+    "description": "Description",
+    "location": "Location",
+    "postedOn": "Posted On",
+    "category": "Category",
+    "condition": "Condition",
+    "similarAds": "Similar Ads",
+    "seller": "Seller"
+  },
+  "auth": {
+    "login": "Login",
+    "signup": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?"
+  },
+  "profile": {
+    "myAds": "My Ads",
+    "favorites": "Favorites",
+    "messages": "Messages",
+    "settings": "Settings"
+  },
+  "postAd": {
+    "title": "Post New Ad",
+    "adTitle": "Ad Title",
+    "description": "Description",
+    "price": "Price",
+    "category": "Category",
+    "location": "Location",
+    "photos": "Photos",
+    "publish": "Publish Ad"
+  },
+  "common": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "share": "Share",
+    "report": "Report",
+    "back": "Back"
+  }
+}
