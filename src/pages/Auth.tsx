@@ -7,8 +7,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
 import { ArrowLeft } from "lucide-react";
+import { useTranslation } from 'react-i18next';
 
 const Auth = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -44,53 +46,62 @@ const Auth = () => {
           onClick={() => navigate("/")}
           className="mb-4"
         >
-          <ArrowLeft className="h-5 w-5 mr-2" />
-          Back to home
+          <ArrowLeft className="h-5 w-5 mx-2" />
+          {t('common.back')}
         </Button>
 
         <Card>
           <CardHeader className="text-center">
             <div className="mx-auto h-12 w-12 rounded-lg bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white font-bold text-2xl mb-4">
-              D
+              د
             </div>
-            <CardTitle>Welcome to Divar</CardTitle>
+            <CardTitle>مرحباً بك في ديوار البحرين</CardTitle>
             <CardDescription>
-              Sign in to your account or create a new one
+              سجل دخولك أو أنشئ حساب جديد
             </CardDescription>
           </CardHeader>
           <CardContent>
             <Tabs defaultValue="login" className="w-full">
               <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="login">Login</TabsTrigger>
-                <TabsTrigger value="signup">Sign Up</TabsTrigger>
+                <TabsTrigger value="login">{t('auth.login')}</TabsTrigger>
+                <TabsTrigger value="signup">{t('auth.signup')}</TabsTrigger>
               </TabsList>
 
               <TabsContent value="login">
                 <form onSubmit={handleLogin} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="login-email">Email</Label>
+                    <Label htmlFor="login-email">{t('auth.email')}</Label>
                     <Input
                       id="login-email"
                       type="email"
                       placeholder="your@email.com"
                       required
+                      className="text-left"
+                      dir="ltr"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="login-password">Password</Label>
+                    <Label htmlFor="login-password">{t('auth.password')}</Label>
                     <Input
                       id="login-password"
                       type="password"
                       placeholder="••••••••"
                       required
+                      className="text-left"
+                      dir="ltr"
                     />
+                  </div>
+                  <div className="text-sm text-right">
+                    <a href="#" className="text-primary hover:underline">
+                      {t('auth.forgotPassword')}
+                    </a>
                   </div>
                   <Button
                     type="submit"
                     className="w-full"
                     disabled={isLoading}
                   >
-                    {isLoading ? "Signing in..." : "Sign In"}
+                    {isLoading ? "جاري تسجيل الدخول..." : t('auth.login')}
                   </Button>
                 </form>
               </TabsContent>
@@ -98,39 +109,45 @@ const Auth = () => {
               <TabsContent value="signup">
                 <form onSubmit={handleSignup} className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="signup-name">Full Name</Label>
+                    <Label htmlFor="signup-name">الاسم الكامل</Label>
                     <Input
                       id="signup-name"
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="محمد أحمد"
                       required
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="signup-email">Email</Label>
+                    <Label htmlFor="signup-email">{t('auth.email')}</Label>
                     <Input
                       id="signup-email"
                       type="email"
                       placeholder="your@email.com"
                       required
+                      className="text-left"
+                      dir="ltr"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="signup-phone">Phone</Label>
+                    <Label htmlFor="signup-phone">رقم الهاتف</Label>
                     <Input
                       id="signup-phone"
                       type="tel"
-                      placeholder="+1 555-0123"
+                      placeholder="+973 3300 1234"
                       required
+                      className="text-left"
+                      dir="ltr"
                     />
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="signup-password">Password</Label>
+                    <Label htmlFor="signup-password">{t('auth.password')}</Label>
                     <Input
                       id="signup-password"
                       type="password"
                       placeholder="••••••••"
                       required
+                      className="text-left"
+                      dir="ltr"
                     />
                   </div>
                   <Button
@@ -138,7 +155,7 @@ const Auth = () => {
                     className="w-full"
                     disabled={isLoading}
                   >
-                    {isLoading ? "Creating account..." : "Create Account"}
+                    {isLoading ? "جاري إنشاء الحساب..." : t('auth.signup')}
                   </Button>
                 </form>
               </TabsContent>

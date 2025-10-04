@@ -93,14 +93,27 @@ const Home = () => {
 
       <div className="container mx-auto px-4 py-6">
         <div className="flex gap-6">
-          <CategoryMenu
-            selectedCategory={selectedCategory}
-            setSelectedCategory={setSelectedCategory}
-            selectedSubcategory={selectedSubcategory}
-            setSelectedSubcategory={setSelectedSubcategory}
-          />
+          <div className="flex-1">
+            <div className="mb-4">
+              <h2 className="text-2xl font-bold">
+                {filteredAds.length} {filteredAds.length === 1 ? 'Ad' : 'Ads'}
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {filteredAds.map((ad) => (
+                <AdCard key={ad.id} ad={ad} />
+              ))}
+            </div>
+          </div>
 
-          <div className="flex-1 space-y-6">
+          <div className="w-64 space-y-4">
+            <CategoryMenu
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+              selectedSubcategory={selectedSubcategory}
+              setSelectedSubcategory={setSelectedSubcategory}
+            />
+            
             <FilterSidebar
               priceRange={priceRange}
               setPriceRange={setPriceRange}
@@ -110,19 +123,6 @@ const Home = () => {
               setSortBy={setSortBy}
               onReset={handleResetFilters}
             />
-
-            <div>
-              <div className="mb-4">
-                <h2 className="text-2xl font-bold">
-                  {filteredAds.length} {filteredAds.length === 1 ? 'Ad' : 'Ads'}
-                </h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {filteredAds.map((ad) => (
-                  <AdCard key={ad.id} ad={ad} />
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>
