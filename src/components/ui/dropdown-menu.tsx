@@ -3,6 +3,7 @@ import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { Check, ChevronRight, Circle } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { useTranslation } from 'react-i18next';
 
 const DropdownMenu = DropdownMenuPrimitive.Root;
 
@@ -75,17 +76,23 @@ const DropdownMenuItem = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
     inset?: boolean;
   }
->(({ className, inset, ...props }, ref) => (
-  <DropdownMenuPrimitive.Item
-    ref={ref}
-    className={cn(
-      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-accent focus:text-accent-foreground",
-      inset && "pl-8",
-      className,
-    )}
-    {...props}
-  />
-));
+>(({ className, inset, ...props }, ref) => {
+  const { i18n } = useTranslation();
+  const isRTL = i18n.language === 'ar';
+  
+  return (
+    <DropdownMenuPrimitive.Item
+      ref={ref}
+      className={cn(
+        "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 focus:bg-accent focus:text-accent-foreground",
+        isRTL ? "text-right" : "text-left",
+        inset && (isRTL ? "pr-8" : "pl-8"),
+        className,
+      )}
+      {...props}
+    />
+  );
+});
 DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;
 
 const DropdownMenuCheckboxItem = React.forwardRef<

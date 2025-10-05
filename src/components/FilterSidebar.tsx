@@ -18,6 +18,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface FilterSidebarProps {
   priceRange: [number, number];
@@ -38,8 +39,9 @@ const FilterSidebar = ({
   setSortBy,
   onReset,
 }: FilterSidebarProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(true);
+  const isRTL = i18n.language === 'ar';
 
   return (
     <div className="w-full bg-card rounded-lg border shadow-sm">
@@ -102,19 +104,19 @@ const FilterSidebar = ({
             <div className="space-y-3">
               <Label className="text-sm font-semibold">{t('filters.condition')}</Label>
               <RadioGroup value={condition} onValueChange={setCondition}>
-                <div className="flex items-center space-x-2">
+                <div className={cn("flex items-center", isRTL ? "space-x-reverse space-x-2" : "space-x-2")}>
                   <RadioGroupItem value="all" id="all" />
                   <Label htmlFor="all" className="font-normal cursor-pointer">
                     {t('filters.all')}
                   </Label>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className={cn("flex items-center", isRTL ? "space-x-reverse space-x-2" : "space-x-2")}>
                   <RadioGroupItem value="new" id="new" />
                   <Label htmlFor="new" className="font-normal cursor-pointer">
                     {t('filters.new')}
                   </Label>
                 </div>
-                <div className="flex items-center space-x-2">
+                <div className={cn("flex items-center", isRTL ? "space-x-reverse space-x-2" : "space-x-2")}>
                   <RadioGroupItem value="used" id="used" />
                   <Label htmlFor="used" className="font-normal cursor-pointer">
                     {t('filters.used')}
