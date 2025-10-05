@@ -4,8 +4,10 @@ import CategoryMenu from "@/components/CategoryMenu";
 import FilterSidebar from "@/components/FilterSidebar";
 import AdCard from "@/components/AdCard";
 import { dummyAds } from "@/data/dummyData";
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+  const { i18n } = useTranslation();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCity, setSelectedCity] = useState("all");
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -13,6 +15,8 @@ const Home = () => {
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 5000]);
   const [condition, setCondition] = useState("all");
   const [sortBy, setSortBy] = useState("newest");
+  
+  const isRTL = i18n.language === 'ar';
 
   const handleResetFilters = () => {
     setPriceRange([0, 5000]);
@@ -92,7 +96,7 @@ const Home = () => {
       />
 
       <div className="container mx-auto px-4 py-6">
-        <div className="flex gap-6 flex-row-reverse">
+        <div className={`flex gap-6 ${isRTL ? 'flex-row-reverse' : 'flex-row'}`}>
           <div className="w-64 space-y-4">
             <CategoryMenu
               selectedCategory={selectedCategory}

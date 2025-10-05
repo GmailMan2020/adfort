@@ -31,55 +31,55 @@ export const categories: Category[] = [
     id: 'real-estate',
     name: 'Real Estate',
     icon: 'Home',
-    subcategories: ['Apartments', 'Houses', 'Commercial', 'Land']
+    subcategories: ['apartments', 'houses', 'commercial', 'land']
   },
   {
     id: 'vehicles',
     name: 'Vehicles',
     icon: 'Car',
-    subcategories: ['Cars', 'Motorcycles', 'Bicycles', 'Parts']
+    subcategories: ['cars', 'motorcycles', 'bicycles', 'parts']
   },
   {
     id: 'electronics',
     name: 'Electronics',
     icon: 'Laptop',
-    subcategories: ['Phones', 'Computers', 'Cameras', 'Gaming']
+    subcategories: ['phones', 'computers', 'cameras', 'gaming']
   },
   {
     id: 'home-kitchen',
     name: 'Home & Kitchen',
     icon: 'Sofa',
-    subcategories: ['Furniture', 'Appliances', 'Decor', 'Garden']
+    subcategories: ['furniture', 'appliances', 'decor', 'garden']
   },
   {
     id: 'jobs',
     name: 'Jobs',
     icon: 'Briefcase',
-    subcategories: ['Full-time', 'Part-time', 'Freelance', 'Internship']
+    subcategories: ['fullTime', 'partTime', 'freelance', 'internship']
   },
   {
     id: 'services',
     name: 'Services',
     icon: 'Wrench',
-    subcategories: ['Repair', 'Cleaning', 'Moving', 'Professional']
+    subcategories: ['repair', 'cleaning', 'moving', 'professional']
   },
   {
     id: 'personal',
     name: 'Personal Items',
     icon: 'ShoppingBag',
-    subcategories: ['Clothing', 'Accessories', 'Beauty', 'Sports']
+    subcategories: ['clothing', 'accessories', 'beauty', 'sports']
   },
   {
     id: 'leisure',
     name: 'Leisure',
     icon: 'Music',
-    subcategories: ['Books', 'Music', 'Games', 'Hobbies']
+    subcategories: ['books', 'music', 'games', 'hobbies']
   },
   {
     id: 'misc',
     name: 'Miscellaneous',
     icon: 'MoreHorizontal',
-    subcategories: ['Free Items', 'Exchange', 'Other']
+    subcategories: ['freeItems', 'exchange', 'other']
   }
 ];
 
