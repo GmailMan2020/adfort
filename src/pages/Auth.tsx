@@ -10,9 +10,10 @@ import { ArrowLeft } from "lucide-react";
 import { useTranslation } from 'react-i18next';
 
 const Auth = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+  const isRTL = i18n.language === 'ar';
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,7 +40,7 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center p-4">
+    <div className="min-h-screen bg-background flex items-center justify-center p-4" dir={isRTL ? 'rtl' : 'ltr'}>
       <div className="w-full max-w-md">
         <Button
           variant="ghost"
@@ -115,6 +116,8 @@ const Auth = () => {
                       type="text"
                       placeholder="محمد أحمد"
                       required
+                      className={isRTL ? "text-right" : "text-left"}
+                      dir={isRTL ? "rtl" : "ltr"}
                     />
                   </div>
                   <div className="space-y-2">
@@ -135,8 +138,8 @@ const Auth = () => {
                       type="tel"
                       placeholder="+973 3300 1234"
                       required
-                      className="text-left"
-                      dir="ltr"
+                      className={isRTL ? "text-right" : "text-left"}
+                      dir={isRTL ? "rtl" : "ltr"}
                     />
                   </div>
                   <div className="space-y-2">

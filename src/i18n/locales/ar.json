@@ -73,7 +73,8 @@
   },
   "home": {
     "adsFound": "إعلان",
-    "noResults": "لا توجد نتائج"
+    "noResults": "لا توجد نتائج",
+    "welcomeMessage": "الرجاء اختيار مدينتك للمتابعة"
   },
   "adCard": {
     "urgent": "عاجل",
@@ -148,6 +149,7 @@
     "delete": "حذف",
     "share": "مشاركة",
     "report": "إبلاغ",
-    "back": "رجوع"
+    "back": "رجوع",
+    "confirm": "تأكيد"
   }
 }

@@ -73,7 +73,8 @@
   },
   "home": {
     "adsFound": "Ads Found",
-    "noResults": "No results found"
+    "noResults": "No results found",
+    "welcomeMessage": "Please select your city to continue"
   },
   "adCard": {
     "urgent": "Urgent",
@@ -123,6 +124,7 @@
     "delete": "Delete",
     "share": "Share",
     "report": "Report",
-    "back": "Back"
+    "back": "Back",
+    "confirm": "Confirm"
   }
 }

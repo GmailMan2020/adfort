@@ -1,10 +1,12 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Header from "@/components/Header";
 import CategoryMenu from "@/components/CategoryMenu";
 import FilterSidebar from "@/components/FilterSidebar";
 import AdCard from "@/components/AdCard";
+import CitySelectionDialog from "@/components/CitySelectionDialog";
 import { dummyAds } from "@/data/dummyData";
 import { useTranslation } from 'react-i18next';
+import Cookies from 'js-cookie';
 
 const Home = () => {
   const { i18n } = useTranslation();
@@ -15,8 +17,25 @@ const Home = () => {
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 5000]);
   const [condition, setCondition] = useState("all");
   const [sortBy, setSortBy] = useState("newest");
+  const [showCityDialog, setShowCityDialog] = useState(false);
   
   const isRTL = i18n.language === 'ar';
+
+  // Check if user has selected a city before
+  useEffect(() => {
+    const savedCity = Cookies.get('selectedCity');
+    if (!savedCity) {
+      setShowCityDialog(true);
+    } else {
+      setSelectedCity(savedCity);
+    }
+  }, []);
+
+  const handleCitySelect = (city: string) => {
+    setSelectedCity(city);
+    Cookies.set('selectedCity', city, { expires: 365 }); // Save for 1 year
+    setShowCityDialog(false);
+  };
 
   const handleResetFilters = () => {
     setPriceRange([0, 5000]);
@@ -87,7 +106,12 @@ const Home = () => {
   ]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
+      <CitySelectionDialog 
+        open={showCityDialog} 
+        onCitySelect={handleCitySelect}
+      />
+      
       <Header
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
