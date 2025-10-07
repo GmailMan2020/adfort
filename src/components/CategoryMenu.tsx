@@ -45,8 +45,8 @@ const CategoryMenu = ({
   };
 
   return (
-    <div className="w-64 bg-card rounded-lg border p-4 shadow-sm">
-      <h3 className="font-semibold text-lg mb-4">{t('categories.title')}</h3>
+    <div className="w-64 bg-gradient-to-b from-card to-background rounded-lg border border-border/50 p-4 shadow-lg animate-slide-up">
+      <h3 className="font-semibold text-lg mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{t('categories.title')}</h3>
       <div className="space-y-1">
         <Button
           variant={selectedCategory === '' ? 'secondary' : 'ghost'}
@@ -73,7 +73,7 @@ const CategoryMenu = ({
                 <CollapsibleTrigger asChild>
                   <Button
                     variant={isSelected ? 'secondary' : 'ghost'}
-                    className="w-full justify-between"
+                    className="w-full justify-between transition-all duration-300 hover:scale-105"
                     onClick={() => handleCategoryClick(category.id)}
                   >
                     <span className="flex items-center">

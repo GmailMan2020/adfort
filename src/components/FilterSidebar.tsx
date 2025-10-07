@@ -44,10 +44,10 @@ const FilterSidebar = ({
   const isRTL = i18n.language === 'ar';
 
   return (
-    <div className="w-full bg-card rounded-lg border shadow-sm">
+    <div className="w-full bg-gradient-to-b from-card to-background rounded-lg border border-border/50 shadow-lg animate-slide-up">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <div className="flex items-center justify-between p-4 border-b">
-          <h3 className="font-semibold text-lg">{t('filters.title')}</h3>
+          <h3 className="font-semibold text-lg bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">{t('filters.title')}</h3>
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="sm" onClick={onReset}>
               {t('filters.reset')}

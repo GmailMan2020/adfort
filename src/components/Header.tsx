@@ -25,18 +25,18 @@ const Header = ({ searchQuery, setSearchQuery, selectedCity, setSelectedCity }: 
   const { t } = useTranslation();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-card shadow-sm">
+    <header className="sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur-lg shadow-lg">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <div 
-            className="flex items-center cursor-pointer"
+            className="flex items-center cursor-pointer group"
             onClick={() => navigate('/')}
           >
-            <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center text-white font-bold text-xl">
+            <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-primary via-primary to-accent flex items-center justify-center text-white font-bold text-xl shadow-lg transition-all duration-300 group-hover:shadow-accent/50 group-hover:scale-110">
               D
             </div>
-            <span className="mx-2 text-xl font-bold text-foreground">ديوار</span>
+            <span className="mx-2 text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">ديوار</span>
           </div>
 
           {/* Search Bar */}
@@ -72,8 +72,8 @@ const Header = ({ searchQuery, setSearchQuery, selectedCity, setSelectedCity }: 
           {/* User Menu */}
           <div className="flex items-center gap-2">
             <Button
-              variant="default"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
+              variant="gradient"
+              className="font-semibold shadow-lg"
               onClick={() => navigate('/post-ad')}
             >
               <Plus className="h-5 w-5 mx-2" />

@@ -36,7 +36,7 @@ const CitySelectionDialog = ({ open, onCitySelect }: CitySelectionDialogProps) =
 
   return (
     <Dialog open={open}>
-      <DialogContent className="sm:max-w-md" dir={isRTL ? 'rtl' : 'ltr'}>
+      <DialogContent className="sm:max-w-md bg-gradient-to-b from-card to-background border-2 border-primary/20 shadow-2xl" dir={isRTL ? 'rtl' : 'ltr'}>
         <DialogHeader>
           <DialogTitle className={isRTL ? 'text-right' : 'text-left'}>
             {t('header.selectCity')}
@@ -62,6 +62,7 @@ const CitySelectionDialog = ({ open, onCitySelect }: CitySelectionDialogProps) =
           <Button 
             onClick={handleConfirm} 
             className="w-full"
+            variant="gradient"
             disabled={!selectedCity}
           >
             {t('common.confirm')}

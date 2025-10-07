@@ -34,14 +34,14 @@ const AdCard = ({ ad }: AdCardProps) => {
 
   return (
     <Card 
-      className="overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
+      className="group overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-2 animate-fade-in border-border/50 hover:border-primary/20"
       onClick={() => navigate(`/ad/${ad.id}`)}
     >
-      <div className="relative aspect-video overflow-hidden">
+      <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-muted to-background">
         <img
           src={ad.image}
           alt={ad.title}
-          className="w-full h-full object-cover transition-transform hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
         {ad.urgent && (
           <Badge className="absolute top-2 left-2 bg-destructive text-destructive-foreground">
@@ -56,9 +56,9 @@ const AdCard = ({ ad }: AdCardProps) => {
           </Badge>
         )}
       </div>
-      <CardContent className="p-4">
-        <h3 className="font-semibold text-lg mb-2 line-clamp-2">{ad.title}</h3>
-        <p className="text-2xl font-bold text-primary mb-3">
+      <CardContent className="p-4 bg-gradient-to-b from-card to-background">
+        <h3 className="font-semibold text-lg mb-2 line-clamp-2 group-hover:text-primary transition-colors">{ad.title}</h3>
+        <p className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-3">
           ${ad.price.toLocaleString()}
         </p>
         <div className="flex items-center text-sm text-muted-foreground mb-2">
