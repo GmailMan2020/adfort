@@ -120,8 +120,8 @@ const Home = () => {
       />
 
       <div className="container mx-auto px-4 py-6">
-        <div className={`flex gap-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-          <div className="w-64 space-y-4">
+        <div className={`flex gap-6 ${isRTL ? 'flex-row-reverse' : ''}`}  dir={isRTL ? 'ltr' : ''}>
+          <div className="w-64 space-y-4" dir={isRTL ? 'rtl' : 'ltr'}>
             <CategoryMenu
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
