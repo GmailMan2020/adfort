@@ -21,6 +21,7 @@ export interface Ad {
     name: string;
     phone: string;
     verified: boolean;
+    isBusiness?: boolean;
   };
   urgent?: boolean;
   featured?: boolean;
@@ -213,7 +214,8 @@ const generateDummyAds = (): Ad[] => {
           seller: {
             name: 'بائع ' + adId,
             phone: '+973 ' + (3300 + adId).toString() + ' ' + (1000 + adId).toString(),
-            verified: Math.random() > 0.4
+            verified: Math.random() > 0.4,
+            isBusiness: Math.random() > 0.7 // 30% chance of being a business account
           },
           featured: Math.random() > 0.92,
           urgent: Math.random() > 0.88
