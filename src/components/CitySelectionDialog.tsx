@@ -51,9 +51,9 @@ const CitySelectionDialog = ({ open, onCitySelect }: CitySelectionDialogProps) =
               <MapPin className="h-4 w-4 mx-2" />
               <SelectValue placeholder={t('header.selectCity')} />
             </SelectTrigger>
-            <SelectContent className="z-[100] bg-popover">
+            <SelectContent className="z-[100] bg-popover" dir={isRTL ? 'rtl' : 'ltr'}>
               {cities.map((city) => (
-                <SelectItem key={city} value={city}>
+                <SelectItem key={city} value={city} className={isRTL ? 'text-right' : 'text-left'}>
                   {city}
                 </SelectItem>
               ))}

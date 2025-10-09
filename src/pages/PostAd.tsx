@@ -19,10 +19,11 @@ import { categories, cities } from "@/data/dummyData";
 import { useTranslation } from 'react-i18next';
 
 const PostAd = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const isRTL = i18n.language === 'ar';
   
   // Form state
   const [images, setImages] = useState<string[]>([]);
@@ -79,11 +80,11 @@ const PostAd = () => {
   const selectedCategory = categories.find(cat => cat.id === category);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background" dir={isRTL ? 'rtl' : 'ltr'}>
       <header className="sticky top-0 z-50 w-full border-b bg-card shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <Button variant="ghost" onClick={() => navigate("/")}>
-            <ArrowLeft className="h-5 w-5 mx-2" />
+            <ArrowLeft className={`h-5 w-5 ${isRTL ? 'ml-2' : 'mr-2'}`} />
             {t('postAd.cancel')}
           </Button>
         </div>
@@ -210,7 +211,7 @@ const PostAd = () => {
                         <SelectTrigger id="category">
                           <SelectValue placeholder={t('postAd.selectCategory')} />
                         </SelectTrigger>
-                        <SelectContent className="z-50 bg-popover">
+                        <SelectContent className="z-50 bg-popover" dir={isRTL ? 'rtl' : 'ltr'}>
                           {categories.map((cat) => (
                             <SelectItem key={cat.id} value={cat.id}>
                               {t(`categories.${cat.id}`)}
@@ -227,7 +228,7 @@ const PostAd = () => {
                           <SelectTrigger id="subcategory">
                             <SelectValue placeholder={t('postAd.selectSubcategory')} />
                           </SelectTrigger>
-                          <SelectContent className="z-50 bg-popover">
+                          <SelectContent className="z-50 bg-popover" dir={isRTL ? 'rtl' : 'ltr'}>
                             {selectedCategory.subcategories.map((sub) => (
                               <SelectItem key={sub} value={sub}>
                                 {sub}
@@ -291,13 +292,13 @@ const PostAd = () => {
                   <div className="space-y-2">
                     <Label>{t('filters.condition')} *</Label>
                     <RadioGroup value={condition} onValueChange={setCondition} required>
-                      <div className="flex items-center space-x-2 space-x-reverse">
+                      <div className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                         <RadioGroupItem value="new" id="new" />
                         <Label htmlFor="new" className="font-normal cursor-pointer">
                           {t('filters.new')}
                         </Label>
                       </div>
-                      <div className="flex items-center space-x-2 space-x-reverse">
+                      <div className={`flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                         <RadioGroupItem value="used" id="used" />
                         <Label htmlFor="used" className="font-normal cursor-pointer">
                           {t('filters.used')}
@@ -312,7 +313,7 @@ const PostAd = () => {
                       <SelectTrigger id="location">
                         <SelectValue placeholder={t('postAd.selectCity')} />
                       </SelectTrigger>
-                      <SelectContent className="z-50 bg-popover">
+                      <SelectContent className="z-50 bg-popover" dir={isRTL ? 'rtl' : 'ltr'}>
                         {cities.map((city) => (
                           <SelectItem key={city} value={city}>
                             {city}
