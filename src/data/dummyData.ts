@@ -187,7 +187,7 @@ const generateDummyAds = (): Ad[] => {
   // Generate at least 7 ads per subcategory
   Object.entries(categoryData).forEach(([category, data]) => {
     data.subcategories.forEach((subcategory) => {
-      for (let i = 0; i < 7; i++) {
+      for (let i = 0; i < 20; i++) {
         const condition = conditions[Math.floor(Math.random() * conditions.length)];
         const city = cities[Math.floor(Math.random() * cities.length)];
         const price = Math.floor(Math.random() * (data.priceRange[1] - data.priceRange[0])) + data.priceRange[0];
